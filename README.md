@@ -97,3 +97,8 @@ private async void DialogueStarted(Node entity)
 - Dialogues can be stored as resource files for better organization
 - Use branching dialogues to create complex conversation trees
 - Customize the UI theme to match your game's style
+
+## ⭐ Star History
+If you appreciate our work, don't forget to give us a star on GitHub! ⭐
+
+![Star History Chart](https://api.star-history.com/svg?repos=poingstudios/dialog-sharp&type=Date)
