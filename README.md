@@ -3,13 +3,11 @@
 ![Stars](https://img.shields.io/github/stars/poingstudios/dialog-sharp?style=social)
 <!-- [![Download Asset Library](https://img.shields.io/badge/Download-Asset%20Library-darkgreen?style=for-the-badge)](https://godotengine.org/asset-library/asset/1108) -->
 
-<p align="center">
-  <img src="icon.svg" alt="DialogSharp Logo" width="180" height="180">
-</p>
-
-# DialogSharp
+# DialogSharp   <img src="icon.svg" alt="DialogSharp Logo" width="40" height="40">
 
 A powerful and flexible dialogue system plugin for Godot 4.x, implemented in C#.
+
+![DialogSampleWorking](static/dialog_sample_working.webp)
 
 ## Features
 
@@ -25,9 +23,9 @@ A powerful and flexible dialogue system plugin for Godot 4.x, implemented in C#.
 Create these actions in Project Settings → Input Map:
 
 #### Dialog Controls
-- `interact`: Start dialogue with NPCs (default: E key)
-- `next_page_dialog`: Advance to next dialogue page (default: Space)
-- `skip_writting_body_dialog`: Skip text animation (default: Ctrl)
+- `interact`: Start dialogue with NPCs
+- `next_page_dialog`: Advance to next dialogue page 
+- `skip_writting_body_dialog`: Skip text animation
 
 #### Menu Navigation
 - `select_menu_item_dialog`: Choose current option

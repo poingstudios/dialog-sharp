@@ -51,10 +51,11 @@ grow_vertical = 2
 
 [node name="Instructions" type="RichTextLabel" parent="."]
 layout_mode = 1
-offset_right = 627.0
-offset_bottom = 324.0
+offset_right = 629.0
+offset_bottom = 350.0
 bbcode_enabled = true
 text = "MOVE: WASD
+On Sample, interact: E
 
 Objective: Move the Player towards the wall and talk with the NPC
 
