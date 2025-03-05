@@ -44,6 +44,7 @@ public partial class Npc : StaticBody2D
     {
         Title = "Gandalf",
         Body = "Select an option",
+        Profile = ResourceLoader.Load<Texture2D>("uid://ckjgmujs2v1xf"),
         Options = new []
         {
             new DialogMenuOptions()

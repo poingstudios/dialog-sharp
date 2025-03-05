@@ -20,7 +20,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-using System.IO;
 using Godot;
 
 [Tool]
@@ -35,13 +34,17 @@ public partial class DialogRayCast2d : RayCast2D
 	public override void _Ready()
 	{
 		SetCollisionMaskValue(IDialogueable.DIALOG_LAYER, true);
-		DialogUI.Instance.DialogStarted += EnterDialogMode;
-		DialogUI.Instance.DialogFinished += ExitDialogMode;
         CollideWithBodies = true;
         CollideWithAreas = true;
+
+		if (!Engine.IsEditorHint())
+		{
+			DialogUI.Instance.DialogStarted += EnterDialogMode;
+			DialogUI.Instance.DialogFinished += ExitDialogMode;
+		}
 	}
 
-	private void ExitDialogMode()
+    private void ExitDialogMode()
 	{
 		SetProcess(true);
 	}

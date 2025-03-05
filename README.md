@@ -15,3 +15,6 @@ A simple and flexible dialogue system plugin for Godot 4.x using C#.
 - Customizable text display effects
 - Full C# implementation
 - Clean and modular architecture
+
+
+##
