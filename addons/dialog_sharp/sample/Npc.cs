@@ -40,7 +40,7 @@ public partial class Npc : StaticBody2D
     {
         DialogIcon.Visible = value;
     }
-    public DialogPageWithOptions dialogPageWithOptions { get; set; } = new DialogPageWithOptions()
+    private DialogPageWithOptions DialogPage { get; set; } = new DialogPageWithOptions()
     {
         Title = "Gandalf",
         Body = "Select an option",
@@ -65,6 +65,6 @@ public partial class Npc : StaticBody2D
     private async void DialogueStarted(Node entity)
     {
         DialogIcon.Visible = false;
-        await DialogUI.Instance.ShowDialogAsync(dialogPageWithOptions);
+        await DialogUI.Instance.ShowDialogAsync(DialogPage);
     }
 }
