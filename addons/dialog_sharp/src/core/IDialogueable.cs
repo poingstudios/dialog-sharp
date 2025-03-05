@@ -25,6 +25,8 @@ using Godot;
 public interface IDialogueable
 {
 
+	public const int DIALOG_LAYER = 7; //Value relative to 'collision_layer'
+
     void StartDialogue(Node entity);
 	void CanStartDialogue(bool value);
 

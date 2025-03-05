@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="DialogSharp"
+run/main_scene="uid://bnr4x16v6iq6j"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
 config/icon="res://icon.svg"
 

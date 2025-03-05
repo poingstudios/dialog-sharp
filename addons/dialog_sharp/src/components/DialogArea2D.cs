@@ -1,6 +1,6 @@
 // MIT License
 //
-// Copyright (c) 2025-present Poing Studios
+// Copyright (c) 2025 Poing Studios
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,13 +20,12 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-
 using Godot;
 
 [Tool]
 [GlobalClass]
 [Icon("uid://dav31k1iifer1")] 
-public partial class DialogArea3D : Area3D, IDialogueable
+public partial class DialogArea2D : Area2D, IDialogueable
 {
 	[Signal]
     public delegate void DialogueStartedEventHandler(Node entity);
@@ -50,6 +49,6 @@ public partial class DialogArea3D : Area3D, IDialogueable
 	public void CanStartDialogue(bool value)
 	{
 		EmitSignal(SignalName.CanDialogue, value);
-		
-	}
+    }
+
 }

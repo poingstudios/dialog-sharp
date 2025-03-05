@@ -1,6 +1,6 @@
 // MIT License
 //
-// Copyright (c) 2025-present Poing Studios
+// Copyright (c) 2025 Poing Studios
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,36 +20,34 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-
 using Godot;
 
-[Tool]
-[GlobalClass]
-[Icon("uid://dav31k1iifer1")] 
-public partial class DialogArea3D : Area3D, IDialogueable
+public partial class Player : CharacterBody2D
 {
-	[Signal]
-    public delegate void DialogueStartedEventHandler(Node entity);
+    [Export]
+    public float Speed { get; set; } = 300.0f;
 
-	[Signal]
-	public delegate void CanDialogueEventHandler(bool value);
+    public override void _PhysicsProcess(double delta)
+    {
+        Vector2 velocity = Vector2.Zero;
 
-	public override void _EnterTree()
-	{
-		Monitoring = false;
-		SetCollisionLayerValue(IDialogueable.DIALOG_LAYER, true);
-		SetCollisionLayerValue(1, false);
-		SetCollisionMaskValue(1, false);
-	}
+        if (Input.IsActionPressed("ui_left") || Input.IsKeyPressed(Key.A))
+            velocity.X -= 1;
+        if (Input.IsActionPressed("ui_right") || Input.IsKeyPressed(Key.D))
+            velocity.X += 1;
+        if (Input.IsActionPressed("ui_up") || Input.IsKeyPressed(Key.W))
+            velocity.Y -= 1;
+        if (Input.IsActionPressed("ui_down") || Input.IsKeyPressed(Key.S))
+            velocity.Y += 1;
 
-	public void StartDialogue(Node entity)
-	{
-		EmitSignal(SignalName.DialogueStarted, entity);
-	}
+        velocity = velocity.Normalized();
+        Velocity = velocity * Speed;
 
-	public void CanStartDialogue(bool value)
-	{
-		EmitSignal(SignalName.CanDialogue, value);
-		
-	}
+        if (velocity != Vector2.Zero)
+        {
+            Rotation = velocity.Angle();
+        }
+
+        MoveAndSlide();
+    }
 }

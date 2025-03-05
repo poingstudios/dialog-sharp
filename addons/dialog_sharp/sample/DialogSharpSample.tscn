@@ -1,0 +1,145 @@
+[gd_scene load_steps=17 format=3 uid="uid://bnr4x16v6iq6j"]
+
+[ext_resource type="Script" uid="uid://ucwq0egdl5g7" path="res://addons/dialog_sharp/sample/Player.cs" id="1_5iynn"]
+[ext_resource type="Script" uid="uid://cndsjr5luf2xr" path="res://addons/dialog_sharp/src/components/DialogRayCast2d.cs" id="2_27a8d"]
+[ext_resource type="Script" uid="uid://dkqxb7dfc2axd" path="res://addons/dialog_sharp/src/components/DialogArea2D.cs" id="2_ftpqp"]
+[ext_resource type="Script" uid="uid://b5uvbb3jnr76i" path="res://addons/dialog_sharp/sample/Npc.cs" id="2_gklnf"]
+[ext_resource type="Texture2D" uid="uid://dav31k1iifer1" path="res://addons/dialog_sharp/assets/dialog_icon.png" id="3_1h0a5"]
+
+[sub_resource type="Gradient" id="Gradient_ftpqp"]
+colors = PackedColorArray(0, 1, 1, 1, 1, 0.423529, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1h0a5"]
+gradient = SubResource("Gradient_ftpqp")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmlv1"]
+size = Vector2(64, 91)
+
+[sub_resource type="Gradient" id="Gradient_2hril"]
+colors = PackedColorArray(0, 0, 1, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_cs3ex"]
+gradient = SubResource("Gradient_2hril")
+width = 46
+
+[sub_resource type="Gradient" id="Gradient_27a8d"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_2hril"]
+gradient = SubResource("Gradient_27a8d")
+
+[sub_resource type="Gradient" id="Gradient_1h0a5"]
+colors = PackedColorArray(0, 0, 1, 1, 1, 0.423529, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ftpqp"]
+gradient = SubResource("Gradient_1h0a5")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gklnf"]
+size = Vector2(64, 91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftpqp"]
+size = Vector2(85, 112)
+
+[node name="DialogSharpSample" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(169, 145)
+script = ExtResource("1_5iynn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Player"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -45.5
+offset_right = 32.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="Player/VBoxContainer"]
+layout_mode = 2
+text = "Player"
+
+[node name="Body" type="TextureRect" parent="Player/VBoxContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_1h0a5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_vmlv1")
+
+[node name="DialogRayCast2d" type="RayCast2D" parent="Player"]
+position = Vector2(30, 4)
+target_position = Vector2(67, 0)
+collision_mask = 65
+hit_from_inside = true
+collide_with_areas = true
+script = ExtResource("2_27a8d")
+IsConfigurated = true
+metadata/_custom_type_script = "uid://cndsjr5luf2xr"
+
+[node name="RayCastIndicatorTexture" type="TextureRect" parent="Player/DialogRayCast2d"]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 67.0
+offset_bottom = 2.0
+texture = SubResource("GradientTexture1D_cs3ex")
+
+[node name="Wall" type="StaticBody2D" parent="."]
+position = Vector2(340, 159)
+
+[node name="Sprite2D" type="Sprite2D" parent="Wall"]
+scale = Vector2(0.484375, 2.92188)
+texture = SubResource("GradientTexture2D_2hril")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Wall"]
+scale = Vector2(0.484375, 2.92188)
+polygon = PackedVector2Array(-32, -32, -32, 32, 32, 32, 32, -32)
+
+[node name="Npc" type="StaticBody2D" parent="." node_paths=PackedStringArray("DialogIcon", "DialogArea")]
+position = Vector2(384, 110)
+script = ExtResource("2_gklnf")
+DialogIcon = NodePath("DialogIcon")
+DialogArea = NodePath("DialogArea2D")
+
+[node name="DialogIcon" type="TextureRect" parent="Npc"]
+unique_name_in_owner = true
+visible = false
+offset_left = 12.0
+offset_top = -42.0
+offset_right = 54.0
+offset_bottom = -1.0
+texture = ExtResource("3_1h0a5")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Npc"]
+offset_right = 64.0
+offset_bottom = 91.0
+
+[node name="Name" type="Label" parent="Npc/VBoxContainer"]
+layout_mode = 2
+text = "NPC"
+
+[node name="Body" type="TextureRect" parent="Npc/VBoxContainer"]
+layout_mode = 2
+texture = SubResource("GradientTexture2D_ftpqp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Npc"]
+position = Vector2(32, 45.5)
+shape = SubResource("RectangleShape2D_gklnf")
+
+[node name="DialogArea2D" type="Area2D" parent="Npc"]
+unique_name_in_owner = true
+collision_layer = 64
+collision_mask = 0
+monitoring = false
+script = ExtResource("2_ftpqp")
+metadata/_custom_type_script = "uid://dkqxb7dfc2axd"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Npc/DialogArea2D"]
+position = Vector2(32.5, 46)
+shape = SubResource("RectangleShape2D_ftpqp")
+debug_color = Color(0.959597, 5.77569e-07, 0.520742, 0.42)

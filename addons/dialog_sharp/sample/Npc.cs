@@ -1,6 +1,6 @@
 // MIT License
 //
-// Copyright (c) 2025-present Poing Studios
+// Copyright (c) 2025 Poing Studios
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,36 +20,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-
 using Godot;
 
-[Tool]
-[GlobalClass]
-[Icon("uid://dav31k1iifer1")] 
-public partial class DialogArea3D : Area3D, IDialogueable
+public partial class Npc : StaticBody2D
 {
-	[Signal]
-    public delegate void DialogueStartedEventHandler(Node entity);
 
-	[Signal]
-	public delegate void CanDialogueEventHandler(bool value);
+    [Export]
+    public TextureRect DialogIcon { get; set; } = null!;
 
-	public override void _EnterTree()
-	{
-		Monitoring = false;
-		SetCollisionLayerValue(IDialogueable.DIALOG_LAYER, true);
-		SetCollisionLayerValue(1, false);
-		SetCollisionMaskValue(1, false);
-	}
+    [Export]
+    public DialogArea2D DialogArea { get; set; } = null!;
 
-	public void StartDialogue(Node entity)
-	{
-		EmitSignal(SignalName.DialogueStarted, entity);
-	}
+    public override void _Ready() {
+        DialogArea.DialogueStarted += DialogueStarted;
+        DialogArea.CanDialogue += CanDialogue;
+    }
 
-	public void CanStartDialogue(bool value)
-	{
-		EmitSignal(SignalName.CanDialogue, value);
-		
-	}
+    private void CanDialogue(bool value)
+    {
+        DialogIcon.Visible = value;
+    }
+
+    private void DialogueStarted(Node entity)
+    {
+        DialogIcon.Visible = false;
+    }
 }
