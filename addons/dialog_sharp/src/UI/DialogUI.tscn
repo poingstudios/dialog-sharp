@@ -111,6 +111,7 @@ _data = {
 }
 
 [node name="DialogUI" type="PanelContainer" node_paths=PackedStringArray("profilePanel", "profileIcon", "title", "body", "nextPageIndicativeLabel", "optionsItemList", "mainBoxAnimationPlayer")]
+z_index = 4096
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

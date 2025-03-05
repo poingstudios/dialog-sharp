@@ -20,6 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
+using System;
 using Godot;
 
 public partial class Player : CharacterBody2D
@@ -27,8 +28,24 @@ public partial class Player : CharacterBody2D
     [Export]
     public float Speed { get; set; } = 300.0f;
 
+    [Export]
+    public DialogRayCast2d dialogRayCast2D { get; set; } = null!;
+
+    public override void _Ready() {
+        DialogUI.Instance.DialogStarted += DialogStarted;
+		DialogUI.Instance.DialogFinished += DialogFinished;
+    }
+
+    public override void _Input(InputEvent @event)
+    {
+        if (Input.IsActionJustPressed("interact"))
+            dialogRayCast2D.Interact();
+    }
+
     public override void _PhysicsProcess(double delta)
     {
+
+
         Vector2 velocity = Vector2.Zero;
 
         if (Input.IsActionPressed("ui_left") || Input.IsKeyPressed(Key.A))
@@ -49,5 +66,17 @@ public partial class Player : CharacterBody2D
         }
 
         MoveAndSlide();
+    }
+
+    private void DialogFinished()
+    {
+        SetPhysicsProcess(true);
+        SetProcessInput(true);
+    }
+
+    private void DialogStarted()
+    {
+        SetPhysicsProcess(false);
+        SetProcessInput(false);
     }
 }

@@ -40,9 +40,30 @@ public partial class Npc : StaticBody2D
     {
         DialogIcon.Visible = value;
     }
-
-    private void DialogueStarted(Node entity)
+    public DialogPageWithOptions dialogPageWithOptions { get; set; } = new DialogPageWithOptions()
+    {
+        Title = "Gandalf",
+        Body = "Select an option",
+        Options = new []
+        {
+            new DialogMenuOptions()
+            {
+                Text = "I don't have next page"
+            },
+            new DialogMenuOptions()
+            {
+                Text = "I have next page",
+                NextPage = new DialogPageWithNextPage()
+                {
+                    Title = "Gandalf",
+                    Body = "You shall not pass!"
+                }
+            }
+        }
+    };
+    private async void DialogueStarted(Node entity)
     {
         DialogIcon.Visible = false;
+        await DialogUI.Instance.ShowDialogAsync(dialogPageWithOptions);
     }
 }
