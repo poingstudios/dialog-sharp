@@ -1,0 +1,276 @@
+[gd_scene load_steps=17 format=3 uid="uid://cn31dd6ofaixn"]
+
+[ext_resource type="Texture2D" uid="uid://ckjgmujs2v1xf" path="res://addons/dialog_sharp/assets/profile_placeholder.svg" id="1_86arn"]
+[ext_resource type="Script" uid="uid://c5rrwrim7j26g" path="res://addons/dialog_sharp/src/UI/DialogUI.cs" id="1_uaiu7"]
+[ext_resource type="Script" uid="uid://de6tyi07hqh22" path="res://addons/dialog_sharp/src/UI/Body.cs" id="3_86arn"]
+[ext_resource type="Texture2D" uid="uid://idgstweb23d" path="res://addons/dialog_sharp/assets/ui_box.svg" id="3_uaiu7"]
+[ext_resource type="Script" uid="uid://ugo21vjds6oc" path="res://addons/dialog_sharp/src/UI/IndicativeLabel.cs" id="5_xr5ea"]
+[ext_resource type="Script" uid="uid://br3048eg25el5" path="res://addons/dialog_sharp/src/UI/OptionsItemList.cs" id="6_uaiu7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_86arn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xr5ea"]
+texture = ExtResource("3_uaiu7")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 12.0
+texture_margin_bottom = 12.0
+modulate_color = Color(1, 1, 1, 0.498039)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gpba1"]
+texture = ExtResource("3_uaiu7")
+texture_margin_left = 12.0
+texture_margin_top = 12.0
+texture_margin_right = 15.0
+texture_margin_bottom = 15.0
+modulate_color = Color(1, 1, 1, 0.443137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_86arn"]
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Animation" id="Animation_uaiu7"]
+resource_name = "Fade"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xr5ea"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("..:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xr5ea"]
+_data = {
+&"Fade": SubResource("Animation_uaiu7"),
+&"RESET": SubResource("Animation_xr5ea")
+}
+
+[sub_resource type="Animation" id="Animation_gpba1"]
+resource_name = "Fade"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_uwy75"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uwy75"]
+_data = {
+&"Fade": SubResource("Animation_gpba1"),
+&"RESET": SubResource("Animation_uwy75")
+}
+
+[node name="DialogUI" type="PanelContainer" node_paths=PackedStringArray("profilePanel", "profileIcon", "title", "body", "nextPageIndicativeLabel", "optionsItemList", "mainBoxAnimationPlayer")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_86arn")
+script = ExtResource("1_uaiu7")
+profilePanel = NodePath("MainContentContainer/MainBox/ProfilePanel")
+profileIcon = NodePath("MainContentContainer/MainBox/ProfilePanel/ProfileTexture")
+title = NodePath("MainContentContainer/MainBox/TitleBodyBox/Title")
+body = NodePath("MainContentContainer/MainBox/TitleBodyBox/TextureRect/Body")
+nextPageIndicativeLabel = NodePath("MainContentContainer/MainBox/TitleBodyBox/TextureRect/Body/IndicativeLabel")
+optionsItemList = NodePath("OptionsMarginContainer/OptionsItemList")
+mainBoxAnimationPlayer = NodePath("MainContentContainer/MainBox/MainBoxAnimationPlayer")
+
+[node name="MainContentContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+
+[node name="MainBox" type="HBoxContainer" parent="MainContentContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ProfilePanel" type="PanelContainer" parent="MainContentContainer/MainBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_xr5ea")
+
+[node name="ProfileTexture" type="TextureRect" parent="MainContentContainer/MainBox/ProfilePanel"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("1_86arn")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TitleBodyBox" type="VBoxContainer" parent="MainContentContainer/MainBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="MainContentContainer/MainBox/TitleBodyBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_xr5ea")
+text = "Title"
+
+[node name="TextureRect" type="PanelContainer" parent="MainContentContainer/MainBox/TitleBodyBox"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_gpba1")
+
+[node name="Body" type="RichTextLabel" parent="MainContentContainer/MainBox/TitleBodyBox/TextureRect"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 90)
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "asdad
+asdASDA
+DASD
+ASD
+S
+as
+ASD
+A
+S"
+scroll_active = false
+scroll_following = true
+script = ExtResource("3_86arn")
+
+[node name="IndicativeLabel" type="RichTextLabel" parent="MainContentContainer/MainBox/TitleBodyBox/TextureRect/Body"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -34.0
+offset_top = -25.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/outline_size = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_86arn")
+bbcode_enabled = true
+text = "[shake]({0})[/shake]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("5_xr5ea")
+actionName = "next_page_dialog"
+
+[node name="MainBoxAnimationPlayer" type="AnimationPlayer" parent="MainContentContainer/MainBox"]
+root_node = NodePath("../TitleBodyBox")
+libraries = {
+&"": SubResource("AnimationLibrary_xr5ea")
+}
+
+[node name="OptionsMarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 50
+
+[node name="OptionsItemList" type="ItemList" parent="OptionsMarginContainer" node_paths=PackedStringArray("animationPlayer", "indicativeLabel")]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_styles/panel = SubResource("StyleBoxTexture_xr5ea")
+allow_rmb_select = true
+allow_search = false
+auto_width = true
+auto_height = true
+item_count = 3
+fixed_column_width = 200
+fixed_icon_size = Vector2i(23, 23)
+item_0/text = "asdaasdasd"
+item_1/text = "asdsadadasad"
+item_2/text = "asd"
+script = ExtResource("6_uaiu7")
+animationPlayer = NodePath("AnimationPlayer")
+indicativeLabel = NodePath("IndicativeLabelMarginContainer/IndicativeLabel")
+
+[node name="IndicativeLabelMarginContainer" type="MarginContainer" parent="OptionsMarginContainer/OptionsItemList"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -38.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 17
+theme_override_constants/margin_bottom = 5
+
+[node name="IndicativeLabel" type="RichTextLabel" parent="OptionsMarginContainer/OptionsItemList/IndicativeLabelMarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/outline_size = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_86arn")
+bbcode_enabled = true
+text = "({0})"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+script = ExtResource("5_xr5ea")
+actionName = "select_last_menu_item_dialog"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="OptionsMarginContainer/OptionsItemList"]
+libraries = {
+&"": SubResource("AnimationLibrary_uwy75")
+}

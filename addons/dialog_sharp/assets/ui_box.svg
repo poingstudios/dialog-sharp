@@ -1,0 +1,54 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<!-- Created using Krita: https://krita.org -->
+<svg xmlns="http://www.w3.org/2000/svg" 
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xmlns:krita="http://krita.org/namespaces/svg/krita"
+    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+    width="153.6pt"
+    height="153.6pt"
+    viewBox="0 0 153.6 153.6">
+<defs>
+  <linearGradient id="gradient0" gradientUnits="objectBoundingBox" x1="0.542968749599779" y1="0" x2="0.544921875335437" y2="1.03225806449235" spreadMethod="pad">
+   <stop stop-color="#26497b" offset="0" stop-opacity="1"/>
+   <stop stop-color="#0098b7" offset="0.537777781486511" stop-opacity="1"/>
+   <stop stop-color="#00f0ff" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient1" gradientUnits="objectBoundingBox" x1="0.542968749599779" y1="0" x2="0.545166015952981" y2="1.03024193552166" spreadMethod="pad">
+   <stop stop-color="#26497b" offset="0" stop-opacity="1"/>
+   <stop stop-color="#0098b7" offset="0.537777781486511" stop-opacity="1"/>
+   <stop stop-color="#00f0ff" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient2" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+   <stop stop-color="#26497b" offset="0" stop-opacity="1"/>
+   <stop stop-color="#0098b7" offset="0.537777781486511" stop-opacity="1"/>
+   <stop stop-color="#00f0ff" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient3" gradientUnits="objectBoundingBox" x1="0.542968749599779" y1="0" x2="0.544921875335437" y2="1.03225806449235" spreadMethod="pad">
+   <stop stop-color="#26497b" offset="0" stop-opacity="1"/>
+   <stop stop-color="#0098b7" offset="0.537777781486511" stop-opacity="1"/>
+   <stop stop-color="#00f0ff" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient4" gradientUnits="objectBoundingBox" x1="0.542968749599779" y1="0" x2="0.544921875335437" y2="1.03225806449235" spreadMethod="pad">
+   <stop stop-color="#26497b" offset="0" stop-opacity="1"/>
+   <stop stop-color="#0098b7" offset="0.537777781486511" stop-opacity="1"/>
+   <stop stop-color="#00f0ff" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient5" gradientUnits="objectBoundingBox" x1="0" y1="0" x2="1" y2="1" spreadMethod="pad">
+   <stop stop-color="#26497b" offset="0" stop-opacity="1"/>
+   <stop stop-color="#0098b7" offset="0.537777781486511" stop-opacity="1"/>
+   <stop stop-color="#00f0ff" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient6" gradientUnits="objectBoundingBox" x1="-0.016396430241729" y1="1.00752665560267" x2="0.993902438842667" y2="-0.0100806752642768" spreadMethod="pad">
+   <stop stop-color="#26497b" offset="0" stop-opacity="1"/>
+   <stop stop-color="#0098b7" offset="0.537777781486511" stop-opacity="1"/>
+   <stop stop-color="#00f0ff" offset="1" stop-opacity="1"/>
+  </linearGradient>
+  <linearGradient id="gradient7" gradientUnits="objectBoundingBox" x1="1.0303523418731" y1="1.01155913405985" x2="-0.0670731707319767" y2="-0.0826612903228519" spreadMethod="pad">
+   <stop stop-color="#26497b" offset="0" stop-opacity="1"/>
+   <stop stop-color="#0098b7" offset="0.537777781486511" stop-opacity="1"/>
+   <stop stop-color="#00f0ff" offset="1" stop-opacity="1"/>
+  </linearGradient>
+ </defs>
+<rect id="shape0" transform="translate(-99.6, -42.3)" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="0.3" stroke-linecap="square" stroke-linejoin="bevel" width="65.4" height="9.3"/><rect id="shape1" transform="translate(-89.7, -2.7)" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="24" stroke-linecap="square" stroke-linejoin="bevel" width="65.4" height="9.3"/><rect id="shape2" transform="translate(-78, -22.2)" fill="#000000" fill-rule="evenodd" stroke="#000000" stroke-width="0.3" stroke-linecap="square" stroke-linejoin="bevel" width="65.4" height="9.3"/><rect id="shape3" transform="translate(0, 0.300000000000001)" fill="url(#gradient0)" fill-rule="evenodd" stroke="#0a000d" stroke-width="0.3" stroke-linecap="square" stroke-linejoin="bevel" width="153.6" height="9.3"/><rect id="shape01" transform="matrix(-3.33066907387547e-16 -1 1 -3.33066907387547e-16 -0.148330921759972 153.6)" fill="url(#gradient1)" fill-rule="evenodd" stroke="#0a000d" stroke-width="0.3" stroke-linecap="square" stroke-linejoin="bevel" width="153.223330976655" height="9.3"/><rect id="shape4" transform="translate(0, 0.300000000000001)" fill="url(#gradient2)" fill-rule="evenodd" stroke="#0a000d" stroke-width="0.3" stroke-linecap="square" stroke-linejoin="bevel" width="9.22499944334758" height="9.29999943882195"/><rect id="shape5" transform="translate(9.45000045748997, 9.90000038744967)" fill="#42757b" fill-rule="evenodd" stroke-opacity="0" stroke="#ffffff" stroke-width="0.3" stroke-linecap="butt" stroke-linejoin="bevel" width="134.28749515288" height="134.474995203452"/><rect id="shape02" transform="matrix(7.7715611723761e-16 1 -1 7.7715611723761e-16 153.631668563376 -2.42028619368284e-14)" fill="url(#gradient3)" fill-rule="evenodd" stroke="#0a000d" stroke-width="0.3" stroke-linecap="square" stroke-linejoin="bevel" width="153.599999999999" height="9.89999999999996"/><rect id="shape03" transform="translate(0, 144.376666420829)" fill="url(#gradient4)" fill-rule="evenodd" stroke="#0a000d" stroke-width="0.3" stroke-linecap="square" stroke-linejoin="bevel" width="153.6" height="9.3"/><rect id="shape04" transform="translate(143.701256566832, 0.192506996676316)" fill="url(#gradient5)" fill-rule="evenodd" stroke="#0a000d" stroke-width="0.3" stroke-linecap="square" stroke-linejoin="bevel" width="9.89874343316803" height="9.29999943882195"/><rect id="shape05" transform="translate(0.151257059852838, 144.230002668297)" fill="url(#gradient6)" fill-rule="evenodd" stroke="#0a000d" stroke-width="0.3" stroke-linecap="square" stroke-linejoin="bevel" width="9.22499944334758" height="9.29999943882195"/><rect id="shape06" transform="translate(144.095000219769, 144.192500620908)" fill="url(#gradient7)" fill-rule="evenodd" stroke="#0a000d" stroke-width="0.3" stroke-linecap="square" stroke-linejoin="bevel" width="9.22499944334758" height="9.29999943882195"/>
+</svg>
