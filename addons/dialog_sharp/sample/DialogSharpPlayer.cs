@@ -20,10 +20,9 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-using System;
 using Godot;
 
-public partial class Player : CharacterBody2D
+public partial class DialogSharpPlayer : CharacterBody2D
 {
     [Export]
     public float Speed { get; set; } = 300.0f;

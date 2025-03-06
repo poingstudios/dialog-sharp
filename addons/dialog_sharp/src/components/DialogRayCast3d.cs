@@ -37,6 +37,7 @@ public partial class DialogRayCast3d : RayCast3D
         SetCollisionMaskValue(IDialogueable.DIALOG_LAYER, true);
         CollideWithBodies = true;
         CollideWithAreas = true;
+		HitFromInside = true;
 
 		if (!Engine.IsEditorHint())
 		{
